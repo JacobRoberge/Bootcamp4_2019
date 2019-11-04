@@ -7,13 +7,7 @@ class ViewBuilding extends React.Component {
     render() {
         const { selectedBuilding, data } = this.props;
         var blah;
-        //Object.values(selectedBoi).forEach(item => {
-        //    concaObject.push(
-        //        <text >
-        //            {item}
-        //         </text >
-        //        )
-        //})
+     
         
         if (selectedBuilding == 0) {
             blah = <i>Click on a name to view more information...</i>;
@@ -34,8 +28,7 @@ class ViewBuilding extends React.Component {
                 else {
                     concaObject.push(<li><text className="whiteSpaceNoWrap">{key}</text><text className="whiteSpaceNoWrap">: </text><text className="whiteSpaceNoWrap">{selectedBoi[key]}</text></li>)
 
-                    //concaObject.push(<tr className="whiteSpaceNoWrap">{selectedBoi[key]}</tr>)
-                    //console.log(key)
+                    
                 }
             })
             blah = concaObject;
