@@ -1,5 +1,5 @@
 import React from 'react';
-
+import ListGroup from 'react-bootstrap/ListGroup'
 class ViewBuilding extends React.Component {
 
     
@@ -20,18 +20,20 @@ class ViewBuilding extends React.Component {
 
             Object.keys(selectedBoi).map((key) => {
                 if (key == "coordinates") {
-                    concaObject.push(<li><text className="whiteSpaceNoWrap">latitude: </text><text className="whiteSpaceNoWrap">{selectedBoi[key].latitude}</text></li>)
-                    concaObject.push(<li><text className="whiteSpaceNoWrap">longitude: </text><text className="whiteSpaceNoWrap">{selectedBoi[key].longitude}</text></li>)
+                    concaObject.push(<ListGroup.Item variant='primary'><text className="whiteSpaceNoWrap">latitude: </text><text className="whiteSpaceNoWrap">{selectedBoi[key].latitude}</text></ListGroup.Item>)
+                    concaObject.push(<ListGroup.Item variant='primary'><text className="whiteSpaceNoWrap">longitude: </text><text className="whiteSpaceNoWrap">{selectedBoi[key].longitude}</text></ListGroup.Item>)
 
 
                 }
                 else {
-                    concaObject.push(<li><text className="whiteSpaceNoWrap">{key}</text><text className="whiteSpaceNoWrap">: </text><text className="whiteSpaceNoWrap">{selectedBoi[key]}</text></li>)
+                    concaObject.push(<ListGroup.Item variant='primary'><text className="whiteSpaceNoWrap">{key}</text><text className="whiteSpaceNoWrap">: </text><text className="whiteSpaceNoWrap">{selectedBoi[key]}</text></ListGroup.Item>)
 
                     
                 }
             })
-            blah = concaObject;
+            blah = <ListGroup>
+                {concaObject}
+                </ListGroup>;
 
         }
         return (

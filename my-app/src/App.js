@@ -5,6 +5,8 @@ import BuildingList from './components/BuildingList';
 import Credit from './components/Credit';
 import AddBuilding from './components/AddBuilding';
 import RemoveBuilding from './components/RemoveBuilding';
+import  Button  from 'react-bootstrap/Button';
+import Container from 'react-bootstrap/Container'
 class App extends React.Component {
   constructor(props) {
     super(props);
@@ -59,13 +61,23 @@ class App extends React.Component {
 
   render() {
     
-    return (
-      <div className="bg">
-        <div className="row">
-          <h1>UF Directory App</h1>
-        </div>
-            <button onClick={this.togglePopup.bind(this)}> Click To add a building</button>  
-            <button onClick={this.togglePopupDelete.bind(this)}> Click To delete a building</button>  
+      return (
+
+          <div className="bg">
+              
+              <div >
+                      <h1 className="header">UF Directory App</h1>
+              </div>
+
+              <Container className="p-22">
+                  <div class="centered">
+
+                  <Button variant="primary" onClick={this.togglePopup.bind(this)}>Click To add a building</Button>
+                  <Button variant="primary" onClick={this.togglePopupDelete.bind(this)}>Click To delete a building</Button>
+                  </div>
+
+                  </Container>
+
 
             <Search filterUpdate={this.filterUpdate.bind(this)} />
         <main>
@@ -96,14 +108,18 @@ class App extends React.Component {
                             data={this.props.data}
                         />
                     </div>
-                    {this.state.addBuilding ?
+                      {this.state.addBuilding ?
+
                         <AddBuilding
                             newBuldingUpdate={this.newBuldingUpdate.bind(this)}
 
                             closePopup={this.togglePopup.bind(this)}
-                        />
+                              />
+
                         : null
-                    } 
+                      } 
+                      
+
                     {this.state.deleteBuilding ?
                         <RemoveBuilding
                             deleteUpdate={this.deleteUpdate.bind(this)}

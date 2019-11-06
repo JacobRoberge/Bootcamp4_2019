@@ -46,6 +46,14 @@ td:hover {
 	cursor: pointer;
 	background-color: #ddd;
 }
+.centered {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.header {
+    text-align: center;
+}
 /* ##### PopUp ##### */
 .popup {
     position: fixed;

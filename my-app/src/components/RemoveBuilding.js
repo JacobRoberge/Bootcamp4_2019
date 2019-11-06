@@ -1,5 +1,7 @@
 // JavaScript source code
 import React from 'react';
+import Button from 'react-bootstrap/Button'
+import Container from 'react-bootstrap/Container'
 
 class RemoveBuilding extends React.Component {
     submit() {
@@ -15,9 +17,12 @@ class RemoveBuilding extends React.Component {
                         <input type="text" placeholder="Type code of entry you want to delete" ref="code" />
                     </form>
                     
-                    <button onClick={() => this.submit()}>submit</button>
+                    
+                    <Container className="p-3">
 
-                    <button onClick={this.props.closePopup}>close</button>
+                        <Button variant="primary" size="lg" onClick={() => this.submit()}>submit</Button>
+                        <Button variant="primary" size="lg" onClick={this.props.closePopup}>close</Button>
+                    </Container>
                 </div>
             </div>
         );

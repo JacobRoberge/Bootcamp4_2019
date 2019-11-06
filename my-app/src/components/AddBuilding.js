@@ -1,9 +1,19 @@
 // JavaScript source code
 
 import React from 'react';
-
+import Button from 'react-bootstrap/Button'
+import Container from 'react-bootstrap/Container'
+import Alert from 'react-bootstrap/Alert'
 class AddBuilding extends React.Component {
-    
+    constructor(props) {
+        super(props);
+        this.state = {
+            boolie: false
+            
+
+
+        };
+    }
     submit() {
         if (this.refs.name.value && this.refs.code.value) {
             const newBuildiBoi = (
@@ -15,7 +25,10 @@ class AddBuilding extends React.Component {
             this.props.closePopup();
         }
         else {
-
+            this.setState({
+                boolie: true
+            })
+            console.log("fuck");
         }
     }
     render() {
@@ -28,10 +41,20 @@ class AddBuilding extends React.Component {
                     <form>
                         <input  type="text" placeholder="Type to add code..." ref="code" />
                     </form>
-                    <p><font color="red">Make sure all of the fields are completed before submitting</font></p>
-                    <button onClick={() => this.submit()}>submit</button>
+                    <Container className="p-3">
 
-                    <button onClick={this.props.closePopup}>close</button>
+                    <Button variant="primary" size="lg" onClick={() => this.submit()}>submit</Button>
+                        <Button variant="primary" size="lg" onClick={this.props.closePopup}>close</Button>
+                    </Container>
+                    <Alert show={this.state.boolie} variant='danger'>
+                        <div class="centered">
+
+Make sure all of the fields are completed before submitting                  </div>
+
+                    </Alert>
+                    
+                    
+
                 </div>
             </div>
         );
